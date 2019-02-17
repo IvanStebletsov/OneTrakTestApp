@@ -65,6 +65,32 @@ extension StepsTrackingViewController {
         stepsGoal = loadedValue
     }
     
+    func showActivityIndicator() {
+        activityIndicator = UIActivityIndicatorView(style: .gray)
+        activityIndicator.frame = CGRect(x: 0, y: 0, width: 46, height: 46)
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addSubview(activityIndicator)
+        
+        NSLayoutConstraint.activate([
+            activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor)])
+        
+        activityIndicator.startAnimating()
+    }
+    
+    func hidectivityIndicator() {
+        if activityIndicator != nil {
+            activityIndicator.stopAnimating()
+            
+            NSLayoutConstraint.deactivate([
+                activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor)])
+            
+            activityIndicator.removeFromSuperview()
+        }
+    }
+    
     // MARK: - Actions for Buttons
     @objc func addNewGoal() {
         let alertController = UIAlertController(title: "Установка новой цели",
@@ -98,6 +124,7 @@ extension StepsTrackingViewController {
     
     // MARK: -  Work with network and API
     func fetchData() {
+        self.showActivityIndicator()
         guard let url = URL(string: apiUrl) else { return }
         let session = URLSession.shared
         
@@ -108,6 +135,7 @@ extension StepsTrackingViewController {
                     let trackedDay = try JSONDecoder().decode([TrackedDay].self, from: data)
                     self.parseData(from: trackedDay)
                     DispatchQueue.main.async { [unowned self] in
+                        self.hidectivityIndicator()
                         self.stepsTrackingTableView.reloadData()
                     }
                 } catch { print(error) }

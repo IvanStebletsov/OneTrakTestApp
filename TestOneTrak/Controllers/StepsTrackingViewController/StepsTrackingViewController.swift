@@ -15,6 +15,7 @@ class StepsTrackingViewController: UIViewController {
     let goalReachedCellId = "goalReachedCell"
     var stepsGoal: Int?
     var trackedDays = [TrackedDay]()
+    var activityIndicator: UIActivityIndicatorView!
     let apiUrl = "https://intern-f6251.firebaseio.com/intern/metric.json"
     
     // MARK: - UI elements
