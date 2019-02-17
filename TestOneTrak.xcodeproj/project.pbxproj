@@ -19,6 +19,8 @@
 		2639464422161AFB000CB3D1 /* TrackedDayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2639464322161AFB000CB3D1 /* TrackedDayTableViewCell.swift */; };
 		26394646221953A9000CB3D1 /* GoalReachedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26394645221953A9000CB3D1 /* GoalReachedTableViewCell.swift */; };
 		2639464822196626000CB3D1 /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2639464722196626000CB3D1 /* IntExtension.swift */; };
+		2639464A2219E700000CB3D1 /* LaunchScreenImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 263946492219E6FF000CB3D1 /* LaunchScreenImage.png */; };
+		2639464C2219ECBA000CB3D1 /* TestOneTrakAppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2639464B2219ECB9000CB3D1 /* TestOneTrakAppIcon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		2639464322161AFB000CB3D1 /* TrackedDayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackedDayTableViewCell.swift; sourceTree = "<group>"; };
 		26394645221953A9000CB3D1 /* GoalReachedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalReachedTableViewCell.swift; sourceTree = "<group>"; };
 		2639464722196626000CB3D1 /* IntExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
+		263946492219E6FF000CB3D1 /* LaunchScreenImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchScreenImage.png; sourceTree = "<group>"; };
+		2639464B2219ECB9000CB3D1 /* TestOneTrakAppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TestOneTrakAppIcon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +121,8 @@
 		2639463B2215FA96000CB3D1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2639464B2219ECB9000CB3D1 /* TestOneTrakAppIcon.png */,
+				263946492219E6FF000CB3D1 /* LaunchScreenImage.png */,
 				263946132211EE64000CB3D1 /* AppDelegate.swift */,
 				2639461F2211EE66000CB3D1 /* LaunchScreen.storyboard */,
 			);
@@ -192,7 +198,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				263946212211EE66000CB3D1 /* LaunchScreen.storyboard in Resources */,
+				2639464A2219E700000CB3D1 /* LaunchScreenImage.png in Resources */,
 				2639461E2211EE66000CB3D1 /* Assets.xcassets in Resources */,
+				2639464C2219ECBA000CB3D1 /* TestOneTrakAppIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

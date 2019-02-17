@@ -1,7 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,7 +17,36 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreenImage.png" translatesAutoresizingMaskIntoConstraints="NO" id="Fjc-mz-hBY">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TestOneTrakAppIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="5go-nA-OEA">
+                                <rect key="frame" x="77.5" y="196.5" width="220" height="220"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="220" id="JRu-4E-3Ci"/>
+                                    <constraint firstAttribute="height" constant="220" id="drG-ch-Jx8"/>
+                                    <constraint firstAttribute="width" secondItem="5go-nA-OEA" secondAttribute="height" multiplier="1:1" id="n0q-8k-qcV"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test One Trak App" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jAb-rN-Www">
+                                <rect key="frame" x="61" y="431.5" width="253.5" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <color key="textColor" red="0.19943046569824219" green="0.51303637027740479" blue="0.59291642904281616" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="jAb-rN-Www" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="2Bv-XU-96r"/>
+                            <constraint firstAttribute="bottom" secondItem="Fjc-mz-hBY" secondAttribute="bottom" id="FyQ-9d-60j"/>
+                            <constraint firstAttribute="trailing" secondItem="Fjc-mz-hBY" secondAttribute="trailing" id="Ra5-F3-nKD"/>
+                            <constraint firstItem="5go-nA-OEA" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="c86-42-uu0"/>
+                            <constraint firstItem="Fjc-mz-hBY" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="eyd-hP-bx2"/>
+                            <constraint firstItem="Fjc-mz-hBY" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="i0y-dP-F1q"/>
+                            <constraint firstItem="jAb-rN-Www" firstAttribute="centerY" secondItem="Fjc-mz-hBY" secondAttribute="centerY" constant="116" id="qHf-6V-vDT"/>
+                            <constraint firstItem="jAb-rN-Www" firstAttribute="top" secondItem="5go-nA-OEA" secondAttribute="bottom" constant="15" id="ydr-bR-maY"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -22,4 +55,8 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="LaunchScreenImage.png" width="764" height="1125"/>
+        <image name="TestOneTrakAppIcon.png" width="881" height="885"/>
+    </resources>
 </document>

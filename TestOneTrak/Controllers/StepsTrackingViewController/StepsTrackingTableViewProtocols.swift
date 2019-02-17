@@ -23,7 +23,7 @@ extension StepsTrackingViewController: UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let trackedDayForCell = trackedDays[section]
         let totalStepsCount = trackedDayForCell.walk + trackedDayForCell.aerobic + trackedDayForCell.run
-        
+
         if let stepsGoal = stepsGoal, totalStepsCount >= stepsGoal {
             return 2
         } else {
@@ -65,6 +65,19 @@ extension StepsTrackingViewController: UITableViewDelegate, UITableViewDataSourc
             }
         } else {
             return mainCell
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == 1 {
+            cell.alpha = 0
+            
+            UIView.animate(
+                withDuration: 0.5,
+                delay: 0.8,
+                animations: {
+                    cell.alpha = 1
+            })
         }
     }
 }

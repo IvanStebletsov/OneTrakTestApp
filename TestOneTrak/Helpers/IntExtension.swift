@@ -8,6 +8,7 @@
 
 import Foundation
 
+// This function convert date from UNIX format and  return formatted date like string
 extension Int {
     func converTimeFromUnixFormat() -> String {
         let unixDate = self / 1000

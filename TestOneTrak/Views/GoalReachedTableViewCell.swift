@@ -20,6 +20,7 @@ class GoalReachedTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
         setupGoalReachedElementsIf()
     }
     
@@ -74,8 +75,8 @@ class GoalReachedTableViewCell: UITableViewCell {
             goalReachedImage.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -15)]
         NSLayoutConstraint.activate(goalReachedImageConstraints)
         
-        UIView.animate(withDuration: 1,
-                       delay: 1.5,
+        UIView.animate(withDuration: 0.5,
+                       delay: 0.5,
                        options: [.curveEaseInOut],
                        animations: { [unowned self] in
                         self.goalReachedImage.alpha = 1

@@ -34,4 +34,8 @@ class StepsTrackingViewController: UIViewController {
         setupStepsTrackingTableView()
         addAimNavigationBarButton()
     }
+    
+    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+        stepsTrackingTableView.reloadData()
+    }
 }

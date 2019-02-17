@@ -37,6 +37,20 @@ class TrackedDayTableViewCell: UITableViewCell {
         setupBottomCellElements()
     }
     
+    override func prepareForReuse() {
+        if walkProgressView.superview != nil {
+            walkProgressView.removeFromSuperview()
+        }
+        
+        if aerobicProgressView.superview != nil {
+            aerobicProgressView.removeFromSuperview()
+        }
+        
+        if runProgressView.superview != nil {
+            runProgressView.removeFromSuperview()
+        }
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -80,28 +94,28 @@ class TrackedDayTableViewCell: UITableViewCell {
         walkProgressView.translatesAutoresizingMaskIntoConstraints = false
         walkProgressView.backgroundColor = #colorLiteral(red: 0.6916202903, green: 0.8898550272, blue: 0.9489519, alpha: 1)
         
-        self.addSubview(walkProgressView)
-        
-        UIView.animate(withDuration: 0.8,
+        UIView.animate(withDuration: 0.5,
                        delay: 0,
                        options: .curveEaseOut,
                        animations: {
                         self.walkProgressView.frame = CGRect(x: 15, y: 50, width: widthOfWlakProgressView, height: 8) },
                        completion: nil)
         
+        self.addSubview(walkProgressView)
+        
         let widthOfAerobicProgressView = (totalWidthOfProgressViewWitoutSpacing * aerobicShare).rounded()
         aerobicProgressView = UIView(frame: CGRect(x: walkProgressView.frame.width + 19, y: 50, width: 0, height: 8))
         aerobicProgressView.translatesAutoresizingMaskIntoConstraints = false
         aerobicProgressView.backgroundColor = #colorLiteral(red: 0.3214670718, green: 0.7792814374, blue: 0.9011147618, alpha: 1)
         
-        self.addSubview(aerobicProgressView)
-        
-        UIView.animate(withDuration: 0.8,
-                       delay: 0.8,
+        UIView.animate(withDuration: 0.5,
+                       delay: 0.5,
                        options: .curveEaseOut,
                        animations: {
                         self.aerobicProgressView.frame = CGRect(x: self.walkProgressView.frame.width + 19, y: 50, width: widthOfAerobicProgressView, height: 8) },
                        completion: nil)
+        
+        self.addSubview(aerobicProgressView)
         
         let widthOfRunProgressView = (totalWidthOfProgressViewWitoutSpacing * runShare).rounded()
         runProgressView = UIView(frame: CGRect(x: walkProgressView.frame.width + aerobicProgressView.frame.width + 23, y: 50, width: 0, height: 8))
@@ -111,14 +125,14 @@ class TrackedDayTableViewCell: UITableViewCell {
         runProgressView.translatesAutoresizingMaskIntoConstraints = false
         runProgressView.backgroundColor = #colorLiteral(red: 0.1993859112, green: 0.5129492283, blue: 0.5969568491, alpha: 1)
         
-        self.addSubview(runProgressView)
-        
-        UIView.animate(withDuration: 0.8,
-                       delay: 1.6,
+        UIView.animate(withDuration: 0.5,
+                       delay: 1,
                        options: .curveEaseOut,
                        animations: {
                         self.runProgressView.frame = CGRect(x: self.walkProgressView.frame.width + self.aerobicProgressView.frame.width + 23, y: 50, width: widthOfRunProgressView, height: 8) },
                        completion: nil)
+        
+        self.addSubview(runProgressView)
     }
     
     func setupBottomCellElements() {

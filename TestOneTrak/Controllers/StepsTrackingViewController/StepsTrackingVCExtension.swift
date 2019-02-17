@@ -86,21 +86,18 @@ extension StepsTrackingViewController {
             defaults.set(newGoal, forKey: "stepsGoal")
             
             self.fetchData()
-            
-            self.stepsTrackingTableView.reloadData()
         }
         
         let cancelAlertAction = UIAlertAction(title: "Отменить", style: .default)
         
-        alertController.addAction(okAlertAction)
         alertController.addAction(cancelAlertAction)
+        alertController.addAction(okAlertAction)
         
         self.present(alertController, animated: true)
     }
     
     // MARK: -  Work with network and API
     func fetchData() {
-        print(#function)
         guard let url = URL(string: apiUrl) else { return }
         let session = URLSession.shared
         
@@ -127,5 +124,4 @@ extension StepsTrackingViewController {
                                                walk: day.walk))
         }
     }
-    
 }
